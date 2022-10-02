@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: url("./images/hero-section-big.jpg"),#F5F2F0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -100;
+    font-family: "Roboto";
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    width: 90%;
+    margin: 2rem auto;
+}
+.logo img{
+    width: 100px;
+}
+.line{
+    margin-left: auto;
+    width: 30%;
+    background-color: #333333;
+    height: 0.1rem;
+}
+.navbar-lists a{
+    text-decoration: none;
+    color: #828282;
+    margin: 0 1rem;
+}
+
+.navbar-lists a:hover{
+    color: #434242;
+}
+.menu-icon{
+    display: none;
+}
+.hero{
+    width:55%;
+    display: block;
+    margin:0 5% 0 auto;
+    position: relative;
+    aspect-ratio: 1/0.72;
+}
+.top{
+    height: 40vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns:65% 25% 10%;
+    grid-template-rows:85% 15%;
+}
+.top h1{
+    font-family: "Merriweather";
+    font-size: 10vw;
+    grid-area: 1/1/2/2;
+    line-height: 0.7;
+    font-weight: 900;
+    color: transparent;
+    margin-top: 1rem;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #333333;
+}
+.top h1 span{
+    color: #333333;
+    -webkit-text-stroke-width:0;
+    font-family: "Merriweather";
+    font-size: 8vw;
+    padding-left: 8rem;
+}
+.top p{
+    margin-top: auto;
+    margin-bottom: 0.7rem;
+    grid-area: 1/2/2/3;
+    text-align: left;
+    padding-right: 5rem;
+    color: #828282;
+    line-height: 1.5;
+    font-size: 2vw;
+}
+.top .sidebar{
+    grid-area:1/2/2/4;
+    margin-left:auto;
+    margin-right: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar img{
+    margin: 1rem 0;
+    width: 15px;
+}
+.top button{
+    grid-area:2/2/3/4;
+    background-color: #737272;
+    border: none;
+    font-weight: 600;
+    color: #F5F2F0;
+    cursor: pointer;
+}
+.top button:hover{
+    transition: 0.25s ease-in-out;
+    border: 1px solid #828282;
+    background-color: transparent;
+    color: #828282;
+}
+.bottom{
+    display: flex;
+}
+
+.roadmap{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    border-left: 10px soild #333333;
+    position: relative;
+}
+.roadmap:before{
+    content: " ";
+    width: 2px;
+    height: 90%;
+    position: absolute;
+    top: 10%;
+    left: 10px;
+    background-color: #828282;
+}
+.roadmap p{
+    margin: 0.4rem 0.1rem;
+    color: #828282;
+    cursor: pointer;
+}
+.roadmap p:hover , .roadmap p.active{
+    margin: 0.4rem 0.1rem;
+    color: #333333;
+    z-index: 100;
+}
+.roadmap p:before{
+    z-index: 100;
+    content: '\25CF ';
+    font-size: 2rem;
+}
+
+.contents{
+    width:70%;
+}
+.contents:before{
+    content: "\201d";
+    font-size: 4.5rem;
+    font-weight: 900;
+    display: block;
+    margin-bottom: -2rem;
+    color: #333333;
+    font-family: "Sans Serif";
+    
+}
+.contents img{
+    width: 100%;
+}
+.contents p{
+    padding-right:12rem ;
+    padding-bottom:1rem;
+}
+
+.arrow{
+    position: absolute;
+    bottom: -1rem;
+    right: 0rem;
+     animation-name: downarrow;
+     animation-duration: 2s;
+     animation-delay: 2s;
+     animation-iteration-count: infinite;
+}
+
+@keyframes downarrow{
+   0%{
+    bottom: -1rem;
+   }
+   100%{
+    bottom: -3rem;
+   }
+}
+
+@media (max-width:768px){
+    .menu-icon{
+        display: block;
+        margin-left: 1rem;
+    }
+    .navbar-lists{
+        display: none;
+    }
+    .hero{
+        width: 90%;
+        margin: 0 auto;
+    }
+    body{
+        background: #F5F2F0;
+    }
+    .roadmap{
+        display: none;
+    }
+    .contents{
+        width: 80%;
+        margin: 0 auto;
+    }
+    .contents p{
+        padding: 0;
+    }
+    .top h1{
+        font-size: 20vw;
+    }
+    .top h1 span{
+        padding-left: 3rem;
+        font-size: 15vw;
+    }
+    .top p{
+        font-size: 5vw;
+        padding: 0;
+    }
+}
+
+@media (min-width:768px) and (max-width:1024px) {
+    body{
+        background-size:30% 100%;
+        /* background-repeat: no-repeat; */
+    }
+    .hero{
+        width: 60%;
+    }
+}
